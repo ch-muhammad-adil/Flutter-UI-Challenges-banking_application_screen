@@ -189,27 +189,35 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          GridView.count(
-            shrinkWrap: true,
-            crossAxisCount: 2,
-            primary: false,
-            childAspectRatio: (MediaQuery.of(context).size.width-60/2)/280,
-            children: <Widget>[
-              createTile(false, 'Profile', Colors.purple, Icons.person),
-              createTile(true, 'Activity', Colors.yellow, Icons.local_activity),
-              createTile(false, 'Statement', Colors.white, Icons.print),
-              createTile(true, 'Transfer', Colors.red, Icons.local_atm),
-              createTile(false, 'Overview', Colors.green, Icons.remove_red_eye),
-              createTile(true, 'Settings', Colors.blue, Icons.settings),
-            ],
-          )
+          getGridView()
         ],
       ),
     );
   }
 
 
-  Widget createTile(bool isEven, String title, Color color, IconData icon) {
+  Widget getGridView() {
+
+    return GridView.count(
+      shrinkWrap: true,
+      crossAxisCount: 2,
+      primary: false,
+      childAspectRatio: (MediaQuery
+          .of(context)
+          .size
+          .width - 60 / 2) / 280,
+      children: <Widget>[
+        createTile(0,_selectedIndex,false, 'Profile', Colors.purple, Icons.person),
+        createTile(1,_selectedIndex,true, 'Activity', Colors.yellow, Icons.local_activity),
+        createTile(2,_selectedIndex,false, 'Statement', Colors.brown, Icons.print),
+        createTile(3,_selectedIndex,true, 'Transfer', Colors.red, Icons.local_atm),
+        createTile(4,_selectedIndex,false, 'Overview', Colors.green, Icons.remove_red_eye),
+        createTile(5,_selectedIndex,true, 'Settings', Colors.blue, Icons.settings),
+      ],
+    );
+  }
+  int _selectedIndex = -1;
+  Widget createTile(int index,int selectedIndex,bool isEven, String title, Color color, IconData icon) {
 
     return Padding(
       padding: EdgeInsets.only(
@@ -218,11 +226,13 @@ class _MyHomePageState extends State<MyHomePage> {
         width: MediaQuery.of(context).size.width,
         child: GestureDetector(
           onTap: (){
-
+            setState(() {
+              _selectedIndex = index;
+            });
           },
           child: Material(
             elevation: 3.0,
-            color: Colors.white  ,
+            color: _selectedIndex==index?Colors.orange:Colors.white,
             borderRadius: BorderRadius.circular(5.0),
             child: Padding(
               padding: const EdgeInsets.only(left: 20,top: 20,bottom: 20),
@@ -230,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Icon(icon,color: color,),
+                  Icon(icon,color: _selectedIndex==index?Colors.white:color,),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -239,7 +249,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black),
+                            color: _selectedIndex==index?Colors.white:Colors.black),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left:2.0),
@@ -248,7 +258,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: 40,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(2.0),
-                            color: color,
+                            color: _selectedIndex==index?Colors.orange:color,
                           ),
                         ),
                       )

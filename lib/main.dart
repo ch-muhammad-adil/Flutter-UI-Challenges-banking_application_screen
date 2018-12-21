@@ -187,10 +187,78 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
                 ],
               ),
-              
+            ],
+          ),
+          GridView.count(
+            shrinkWrap: true,
+            crossAxisCount: 2,
+            primary: false,
+            childAspectRatio: (MediaQuery.of(context).size.width-60/2)/280,
+            children: <Widget>[
+              createTile(false, 'Profile', Colors.purple, Icons.person),
+              createTile(true, 'Activity', Colors.yellow, Icons.local_activity),
+              createTile(false, 'Statement', Colors.white, Icons.print),
+              createTile(true, 'Transfer', Colors.red, Icons.local_atm),
+              createTile(false, 'Overview', Colors.green, Icons.remove_red_eye),
+              createTile(true, 'Settings', Colors.blue, Icons.settings),
             ],
           )
         ],
+      ),
+    );
+  }
+
+
+  Widget createTile(bool isEven, String title, Color color, IconData icon) {
+
+    return Padding(
+      padding: EdgeInsets.only(
+          left:  isEven?10:20, right: isEven?20:10, top: 10, bottom: 10),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        child: GestureDetector(
+          onTap: (){
+
+          },
+          child: Material(
+            elevation: 3.0,
+            color: Colors.white  ,
+            borderRadius: BorderRadius.circular(5.0),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20,top: 20,bottom: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Icon(icon,color: color,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        title,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left:2.0),
+                        child: Container(
+                          height: 3.0,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(2.0),
+                            color: color,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

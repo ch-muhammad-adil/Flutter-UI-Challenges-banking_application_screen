@@ -2,17 +2,13 @@
 
 A Screen Design for banking application concept. I have developed it using Flutter. 
 
-# Original design sample
+# Original design at left
 <p align="center">
   <img src="https://github.com/ch-muhammad-adil/banking_application_screen_design/blob/master/preview.png">
-  <br/>
-</p>
-
-# My implementation
-<p align="center">
   <img src="https://github.com/ch-muhammad-adil/banking_application_screen_design/blob/master/Screenshot%202018-12-21%20at%2011.54.07%20AM.png">
   <br/>
 </p>
+
 
 ## Getting Started
 

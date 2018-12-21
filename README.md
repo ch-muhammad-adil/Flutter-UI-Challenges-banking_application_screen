@@ -2,6 +2,12 @@
 
 A Screen Design for banking application concept. I have developed it using Flutter. 
 
+# Original design sample
+<p align="center">
+  <img src="https://github.com/ch-muhammad-adil/banking_application_screen_design/blob/master/preview.png">
+  <br/>
+</p>
+
 
 ## Getting Started
 

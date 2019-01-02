@@ -2,16 +2,12 @@
 
 A Screen Design for banking application concept. I have developed it using Flutter. 
 
-# Original design sample
+# Original
 ![](/preview.png)
 
 
 # My implementation
 ![](/Screenshot%202018-12-21%20at%2011.54.07%20AM.png)
-
-sorry for bad gif :P 
-
-![](/banking_application.gif)
 
 ## Getting Started
 

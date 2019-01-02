@@ -3,24 +3,15 @@
 A Screen Design for banking application concept. I have developed it using Flutter. 
 
 # Original design sample
-<p align="center">
-  <img src="https://github.com/ch-muhammad-adil/banking_application_screen_design/blob/master/preview.png">
-  <br/>
-</p>
+![](/preview.png)
 
 
 # My implementation
-<p align="center">
-  <img src="https://github.com/ch-muhammad-adil/banking_application_screen_design/blob/master/Screenshot%202018-12-21%20at%2011.54.07%20AM.png">
-  <br/>
-</p>
+![](/Screenshot%202018-12-21%20at%2011.54.07%20AM.png)
 
 sorry for bad gif :P 
 
-<p align="center">
-  <img src="https://github.com/ch-muhammad-adil/banking_application_screen_design/blob/master/banking_application.gif">
-  <br/>
-</p>
+![](/banking_application.gif)
 
 ## Getting Started
 
